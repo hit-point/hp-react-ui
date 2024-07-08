@@ -1,0 +1,126 @@
+{
+  "name": "hp-react-ui",
+  "version": "1.0.0",
+  "description": "An out-of-box UI solution for enterprise applications",
+  "scripts": {
+    "commit": "git add . && czg",
+    "postinstall": "max setup",
+    "dev": "pnpm run start:dev",
+    "build": "max build",
+    "analyze": "cross-env ANALYZEZ=1 max build",
+    "lint": "npm run lint:eslint && npm run lint:stylelint",
+    "lint:eslint": "eslint --max-warnings 0  \"src/**/*.{js,jsx,ts,tsx,html,md}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,less,html,md}\"",
+    "lint:stylelint": "stylelint --fix \"**/*.{css,postcss,less}\"",
+    "preview": "pnpm run build && max preview --port 8000",
+    "i18n-remove": "pro i18n-remove --locale=zh-CN --write",
+    "serve": "umi-serve",
+    "start": "cross-env UMI_ENV=dev max dev",
+    "start:dev": "cross-env REACT_APP_ENV=dev MOCK=none UMI_ENV=dev max dev",
+    "start:pre": "cross-env REACT_APP_ENV=pre UMI_ENV=dev max dev",
+    "start:test": "cross-env REACT_APP_ENV=test MOCK=none UMI_ENV=dev max dev",
+    "tsc": "tsc --noEmit",
+    "prepare": "husky install",
+    "changelog": "conventional-changelog -p gitmoji-config -i CHANGELOG.md -s"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^5.0.0",
+    "@ant-design/pro-components": "^2.4.4",
+    "@ant-design/use-emotion-css": "1.0.4",
+    "@umijs/route-utils": "^4.0.1",
+    "antd": "^5.4.4",
+    "classnames": "^2.3.2",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "fabric": "^5.3.0",
+    "highlight.js": "^11.7.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "nprogress": "^0.2.0",
+    "omit.js": "^2.0.2",
+    "postcss": "^8.4.38",
+    "postcss-less": "^6.0.0",
+    "query-string": "^8.1.0",
+    "rc-menu": "^9.8.4",
+    "rc-util": "^5.30.0",
+    "react": "^18.2.0",
+    "react-cropper": "^2.3.3",
+    "react-dev-inspector": "^1.8.1",
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^1.3.0",
+    "react-highlight": "^0.15.0",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-less": "^3.0.1",
+    "stylelint-less": "^3.0.1",
+    "stylelint-order": "^6.0.4"
+  },
+  "devDependencies": {
+    "@ant-design/pro-cli": "^3.1.0",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@testing-library/react": "^14.0.0",
+    "@types/lodash": "^4.14.194",
+    "@types/react": "^18.0.38",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-helmet": "^6.1.5",
+    "@types/react-highlight": "^0.12.5",
+    "@umijs/lint": "^4.0.66",
+    "@umijs/max": "^4.0.66",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^4.1.0",
+    "conventional-changelog-gitmoji-config": "^1.5.2",
+    "cross-env": "^7.0.3",
+    "cz-git": "^1.6.1",
+    "czg": "^1.6.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^3.0.0",
+    "swagger-ui-dist": "4.18.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "umi-presets-pro": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "create-umi": {
+    "ignoreScript": [
+      "functions*",
+      "site",
+      "generateMock"
+    ],
+    "ignoreDependencies": [
+      "netlify*",
+      "serverless"
+    ],
+    "ignore": [
+      ".git",
+      ".github",
+      ".gitpod.yml",
+      "CODE_OF_CONDUCT.md",
+      "lambda",
+      "LICENSE",
+      "netlify.toml",
+      "README.*.md",
+      "azure-pipelines.yml",
+      "CNAME",
+      "create-umi"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}

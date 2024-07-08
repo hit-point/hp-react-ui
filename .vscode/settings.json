@@ -1,0 +1,42 @@
+{
+  // 粘贴时格式化代码
+  "editor.formatOnPaste": true,
+  // 保存时格式化代码
+  "editor.formatOnSave": true,
+  "eslint.enable": true, //是否开启vscode的eslint
+  "eslint.options": {
+    //指定vscode的eslint所处理的文件的后缀
+    "extensions": [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // 开启css less标红提示
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss"
+  ],
+  // 开启css less保存自动根据stylelint格式化
+  "[css][less]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  // // 控制相关文件嵌套展示
+  // "explorer.fileNesting.enabled": true,
+  // "explorer.fileNesting.expand": false,
+  // "explorer.fileNesting.patterns": {
+  //   "*.ts": "$(capture).test.ts, $(capture).test.tsx",
+  //   "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
+  //   "*.env": "$(capture).env.*",
+  //   "package.json": "pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,.npmrc,.browserslistrc,commitlint.config.js,.release-it.json,components.d.ts,tsconfig.json,jsconfig.json",
+  //   ".eslintrc.js": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.js,.prettierrc.js,.stylelintrc.js,stylelint.config.js,tailwind.config.js,prettier.config.js,postcss.config.js,.cz-config.js"
+  // }
+}
